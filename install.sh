@@ -101,6 +101,17 @@ if ! command -v tailscale &> /dev/null; then
     echo "Tailscale installed successfully. Run 'sudo tailscale up' later to authenticate."
 fi
 
+# Fix for WSL DNS compatibility with Tailscale
+if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null; then
+    echo "WSL detected. Applying Tailscale DNS compatibility fix..."
+    if [ ! -f "/etc/wsl.conf" ] || ! grep -q "generateResolvConf = false" /etc/wsl.conf; then
+        echo -e "\n[network]\ngenerateResolvConf = false" >> /etc/wsl.conf
+        rm -f /etc/resolv.conf
+        echo "nameserver 8.8.8.8" > /etc/resolv.conf
+        echo "WSL DNS configuration updated to prevent conflicts with Tailscale."
+    fi
+fi
+
 # -----------------------------------------------------------
 # 4. Network Provisioning
 # -----------------------------------------------------------
@@ -171,6 +182,9 @@ echo "Starting LocalAI embeddings service (Build may take several minutes)..."
 cd services/embeddings && $RUN_AS $DOCKER_CMD up -d --build && cd ../..
 
 echo "Starting n8n orchestrator..."
+mkdir -p services/n8n/n8n-data
+# Asegurar que n8n (UID 1000 interno) pueda escribir en el volumen local
+chown -R 1000:1000 services/n8n/n8n-data
 cd services/n8n && $RUN_AS $DOCKER_CMD up -d && cd ../..
 
 echo "Starting NocoDB visualization toolkit..."
