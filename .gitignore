@@ -35,6 +35,7 @@ processed/
 # Planning (internal)
 # ========================
 planing.md
+test_wls_install.py
 
 # ========================
 # OS files
