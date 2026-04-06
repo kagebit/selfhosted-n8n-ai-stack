@@ -26,7 +26,7 @@ Red donde todos los servicios de IA se comunican entre sí.
 - n8n llama a LocalAI: `http://localai:8080/v1/embeddings`
 - n8n conecta a Postgres RAG: `Postgres_RAG:5432`
 
-> Los servicios usan el `container_name` como hostname dentro de la red Docker.
+> Los servicios usan el `container_name` como *hostname* dentro de la red Docker.
 
 ---
 
@@ -66,7 +66,7 @@ Red independiente de Portainer para la gestión de Docker.
 
 ## Crear las redes
 
-Antes de levantar cualquier servicio, crear las redes externas:
+Antes de iniciar cualquier servicio, crea las redes externas:
 
 ```bash
 docker network create n8n-net

@@ -43,7 +43,7 @@ Esto abrirá un enlace para autenticar tu máquina en [login.tailscale.com](http
 
 ### 3. Habilitar Funnel
 
-En el panel de admin de Tailscale ([login.tailscale.com/admin](https://login.tailscale.com/admin)):
+En el panel de administración de Tailscale ([login.tailscale.com/admin](https://login.tailscale.com/admin)):
 
 1. Ve a **DNS** y asegúrate de tener HTTPS habilitado
 2. Ve a **Access Controls** y añade los permisos de Funnel
@@ -72,10 +72,10 @@ Reinicia n8n:
 cd services/n8n && docker-compose restart
 ```
 
-### 6. Configurar el trigger de Telegram en n8n
+### 6. Configurar el disparador de Telegram en n8n
 
 1. En n8n, crea un nodo **Telegram Trigger**
-2. Configura tu Bot Token
+2. Configura tu token de bot (Bot Token)
 3. n8n registrará automáticamente el webhook con Telegram usando la URL HTTPS de Tailscale
 
 ---
@@ -102,7 +102,7 @@ Para que el Funnel arranque automáticamente al reiniciar el servidor:
 # Habilitar el servicio de Tailscale
 sudo systemctl enable tailscaled
 
-# El funnel se configura de forma persistente
+# El Funnel se configura de forma persistente
 sudo tailscale funnel --bg 5678
 ```
 
