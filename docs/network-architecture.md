@@ -94,17 +94,17 @@ docker network inspect db --format '{{.Name}}: {{range .Containers}}{{.Name}} {{
 
 ```
               ┌─────────────────────────────────────┐
-              │           n8n-net                    │
+              │           n8n-net                   │
               │                                     │
               │  n8n ←→ Postgres_RAG                │
               │   ↕       ↕                         │
-              │  Whisper  Postgres_Vector            │
+              │  Whisper  Postgres_Vector           │
               │   ↕       ↕                         │
               │  LocalAI  Qdrant                    │
               └─────────────────────────────────────┘
                           ↕ (Postgres_RAG + Postgres_Vector comparten)
               ┌─────────────────────────────────────┐
-              │            db                        │
+              │            db                       │
               │                                     │
               │  NocoDB ←→ Postgres_RAG             │
               │         ←→ Postgres_Vector          │
