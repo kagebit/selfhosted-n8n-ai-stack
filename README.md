@@ -14,7 +14,7 @@ Self-hosted AI automation stack orchestrated via Docker and isolated internal ne
 
 ## Features
 
-- **Local AI Workflows**: Complete n8n automation paired with local embeddings and LLMs without external API costs. Check if your hardware is supported at [canirun.ai](https://canirun.ai/).
+- **Local AI Workflows**: Complete n8n automation paired with local embeddings. Full LLMs can also run locally without external API costs if your hardware has the capacity. You can verify what AI models your device supports at [canirun.ai](https://canirun.ai/).
 - **RAG & Vector Search**: Integrated PostgreSQL with pgvector and Qdrant for high-performance semantic search.
 - **Secure Integration**: Built-in Tailscale Funnel script for secure public HTTPS endpoints (ideal for webhook ingestion like Telegram).
 - **Resource Efficiency**: Uses lightweight model combinations (`small` Whisper and `all-MiniLM-L6-v2`) suitable for modest hardware.
@@ -95,7 +95,7 @@ Once installed, the entire orchestration layer is started automatically. You can
 - **PostgreSQL Vector**: `postgres-vector:5433` (Requires `CREATE EXTENSION IF NOT EXISTS vector;`)
 - **Qdrant**: `qdrant:6333`
 - **Whisper**: `whisper:5001` (Speech-to-Text inference wrapper)
-- **Local AI**:
+- **LocalAI**: `localai:8081` (Local LLMs and embeddings)
 ### Architecture Topology
 
 ```text

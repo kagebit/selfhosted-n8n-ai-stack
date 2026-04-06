@@ -14,7 +14,7 @@ Stack completo de automatización con IA, 100% self-hosted, configurado con Dock
 
 ## Características
 
-- **Workflows con IA Local**: Automatización completa en n8n acoplada con embeddings y LLMs totalmente locales, sin costes de APIs externas. Puedes revisar si tu dispositivo es compatible en [canirun.ai](https://canirun.ai/).
+- **Workflows con IA Local**: Automatización completa en n8n. Por defecto corremos los embeddings en local. Además, la IA (LLMs) también se corre completamente en local si tu máquina tiene la capacidad, ahorrando costes de APIs externas. Puedes comprobar qué modelos soporta tu hardware entrando a [canirun.ai](https://canirun.ai/).
 - **RAG y Búsquedas Vectoriales**: PostgreSQL integrado con la extensión pgvector y Qdrant para búsquedas semánticas de alto rendimiento.
 - **Integración Segura**: Script para automatizar Tailscale Funnel que provee endpoints HTTPS públicos y seguros (ideal para recibir webhooks de Telegram).
 - **Eficiencia de Recursos**: Uso de modelos optimizados y ligeros (`small` en Whisper y `all-MiniLM-L6-v2` para embeddings), aptos para hardware personal o modesto.
@@ -96,6 +96,7 @@ Estos endpoints no son accesibles desde fuera, pero puedes llamarlos desde n8n a
 - **PostgreSQL Vector**: `postgres-vector:5433` *(Requiere un `CREATE EXTENSION IF NOT EXISTS vector;` post-instalación)*
 - **Qdrant**: `qdrant:6333`
 - **Whisper**: `whisper:5001` (Contenedor que hace de Wrapper API para Whisper)
+- **LocalAI**: `localai:8081` (LLMs y embeddings locales)
 
 ### Topología de la Arquitectura
 
