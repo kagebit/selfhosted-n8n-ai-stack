@@ -108,7 +108,7 @@ Clone the repository and run the setup script. The script resolves dependencies,
 #### For Linux Distributions
 
 ```bash
-git clone https://github.com/TU_USUARIO/selfhosted-n8n-ai-stack.git
+git clone https://github.com/Hamza-Cloud-DevOPS/selfhosted-n8n-ai-stack.git
 cd selfhosted-n8n-ai-stack
 chmod +x install.sh
 sudo ./install.sh
@@ -117,7 +117,7 @@ sudo ./install.sh
 #### For macOS Devices
 
 ```bash
-git clone https://github.com/TU_USUARIO/selfhosted-n8n-ai-stack.git
+git clone https://github.com/Hamza-Cloud-DevOPS/selfhosted-n8n-ai-stack.git
 cd selfhosted-n8n-ai-stack
 chmod +x mac_install.sh
 ./mac_install.sh

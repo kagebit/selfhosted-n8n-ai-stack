@@ -90,7 +90,7 @@ git commit -m "🚀 Initial commit: Self-hosted n8n AI stack full configuration"
 Añade tu repositorio de GitHub como remote origin (cambia el link por tu repositorio):
 
 ```bash
-git remote add origin git@github.com:TU_USUARIO/selfhosted-n8n-ai-stack.git
+git remote add origin git@github.com:Hamza-Cloud-DevOPS/selfhosted-n8n-ai-stack.git
 ```
 
 Renombra la rama principal a `main`:
