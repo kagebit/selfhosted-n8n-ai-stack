@@ -1,4 +1,4 @@
-*🌍 Leer esto en [Español](tailscale-setup.md)*
+*🌍 Read this in [Spanish (Español)](tailscale-setup.md)*
 
 # 🔒 Tailscale Funnel Setup
 
@@ -39,7 +39,7 @@ sudo pacman -S tailscale
 sudo tailscale up
 ```
 
-This commands gives you a login link you must open in your browser to bind your machine to [login.tailscale.com](https://login.tailscale.com).
+This command gives you a login link you must open in your browser to bind your machine to [login.tailscale.com](https://login.tailscale.com).
 
 ### 3. Enable Funnel Functionality
 
@@ -75,7 +75,7 @@ cd services/n8n && docker-compose restart
 ### 6. Set up the Telegram trigger
 
 1. In n8n, create a new **Telegram Trigger** node.
-2. Setup your Bot Credentials (Token key).
+2. Set up your Bot Credentials (Token key).
 3. n8n will automatically register the webhook securely against Telegram's API using the Tailscale HTTPS URL under the hood!
 
 ---
@@ -112,5 +112,5 @@ sudo tailscale funnel --bg 5678
 
 - Tailscale Funnel runs natively at the **OS System Level**, not inside a Docker container.
 - Your Tailscale URL is statically assigned long-term.
-- TLS Certificates are provisioned and renewed fully automated.
+- TLS Certificates are provisioned and renewed fully automatically.
 - Fully compatible and reachable by any external client natively.

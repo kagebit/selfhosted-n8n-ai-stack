@@ -1,4 +1,4 @@
-*🌍 Leer esto en [Español](network-architecture.md)*
+*🌍 Read this in [Spanish (Español)](network-architecture.md)*
 
 # 🌐 Docker Network Architecture
 
@@ -66,7 +66,7 @@ Independent Portainer network for Docker orchestration management.
 
 ## Creating the networks
 
-Before bringing up any service, create the external networks manually (unless using the install script):
+Before starting any service, create the external networks manually (unless using the install script):
 
 ```bash
 docker network create n8n-net
