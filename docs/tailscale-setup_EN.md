@@ -6,6 +6,8 @@ Tailscale Funnel allows you to expose a local service securely to the internet v
 
 This is **essential** so n8n can receive Telegram Webhooks securely over TLS/SSL natively.
 
+> **💡 Quick Shortcut**: You can automate steps 4 and 5 of this guide by running `sudo ./tailscale_config.sh` from the repository root.
+
 ---
 
 ## Why Tailscale?

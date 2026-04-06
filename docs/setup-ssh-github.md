@@ -71,7 +71,7 @@ Ahora que el SSH ya está, vamos a iniciar Git en el proyecto y subirlo.
 Entra en la carpeta del repositorio si no estás dentro:
 
 ```bash
-cd C:\Users\hamza\Desktop\Desktop\Repo\selfhosted-n8n-ai-stack
+cd /ruta/a/selfhosted-n8n-ai-stack
 ```
 
 Inicializa Git:

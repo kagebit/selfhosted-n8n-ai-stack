@@ -125,9 +125,16 @@ chmod +x mac_install.sh
 
 During the execution, the script will pause to allow manual configuration of the `.env` credentials in `services/n8n/`, `services/postgres-rag/`, and `services/postgres-vector/`.
 
-### 3. Manual Tailscale Configuration (Optional but Recommended)
+### 3. Tailscale Funnel Configuration (Recommended)
 
-For integrations that mandate valid TLS endpoints (e.g., Telegram Webhooks), configure Tailscale Funnel. Refer to [docs/tailscale-setup.md](docs/tailscale-setup.md) for detailed instructions.
+For integrations that require valid HTTPS endpoints (e.g., Telegram Webhooks), you must configure Tailscale Funnel. Run the automated configurator from the repository root:
+
+```bash
+chmod +x tailscale_config.sh
+sudo ./tailscale_config.sh
+```
+
+This script verifies your Tailscale authentication, exposes n8n via HTTPS on port 5678, and automatically updates your `.env` with the correct webhook URLs. For manual step-by-step instructions, refer to [docs/tailscale-setup.md](docs/tailscale-setup.md).
 
 ---
 
@@ -139,7 +146,7 @@ For integrations that mandate valid TLS endpoints (e.g., Telegram Webhooks), con
 
 ### PostgreSQL RAG
 - **Port**: `5434`
-- **Base Image**: `postgres:10`
+- **Base Image**: `postgres:16`
 - **Application**: Persistent storage for RAG pipeline context and n8n workflows.
 
 ### PostgreSQL Vector

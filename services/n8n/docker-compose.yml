@@ -20,10 +20,9 @@ services:
       - .env
     volumes:
       - ./n8n-data:/home/node/.n8n
-      # Monta la carpeta de whisper para acceso a archivos de audio
-      - /home/user/Docker/n8n-debian/whisper:/files
-      # Carpeta compartida para documentos RAG
-      - /home/user/Share/Rag_implement:/data/shared
+      # Optional: Uncomment and set paths in .env for shared file access
+      # - ${WHISPER_FILES_PATH:-./shared/whisper}:/files
+      # - ${RAG_SHARED_PATH:-./shared/rag}:/data/shared
     networks:
       - internal
       - n8n-net

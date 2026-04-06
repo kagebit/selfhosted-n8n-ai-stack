@@ -125,9 +125,16 @@ chmod +x mac_install.sh
 
 Durante la ejecución, el script se pausará para permitirte editar manualmente tus variables seguras `.env` presentes en `services/n8n/`, `services/postgres-rag/` y `services/postgres-vector/`.
 
-### 3. Configuración Manual de Tailscale (Opcional, muy recomendada)
+### 3. Configuración de Tailscale Funnel (Recomendado)
 
-Para validación de certificados TLS estrictos (imprescindible para los Webhooks de Telegram), puedes configurar Tailscale Funnel. Lee la guía paso a paso en [docs/tailscale-setup.md](docs/tailscale-setup.md) o ejecuta `./tailscale_config.sh`.
+Para que n8n pueda recibir webhooks seguros por HTTPS (imprescindible para Telegram y otras integraciones), debes configurar Tailscale Funnel. Ejecuta el configurador automático desde la raíz del repositorio:
+
+```bash
+chmod +x tailscale_config.sh
+sudo ./tailscale_config.sh
+```
+
+Este script verificará tu autenticación de Tailscale, expondrá n8n vía HTTPS en el puerto 5678 y actualizará automáticamente tu `.env` con las URLs de webhook correctas. Para instrucciones manuales paso a paso, consulta [docs/tailscale-setup.md](docs/tailscale-setup.md).
 
 ---
 
@@ -139,7 +146,7 @@ Para validación de certificados TLS estrictos (imprescindible para los Webhooks
 
 ### PostgreSQL RAG
 - **Puerto**: `5434`
-- **Imagen**: `postgres:10`
+- **Imagen**: `postgres:16`
 - **Uso**: Almacenamiento persistente para contextos RAG y ajustes del orquestador.
 
 ### PostgreSQL Vector

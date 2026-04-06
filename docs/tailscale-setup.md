@@ -6,6 +6,8 @@ Tailscale Funnel permite exponer un servicio local a internet con HTTPS, sin nec
 
 Esto es **necesario** para que n8n pueda recibir webhooks de Telegram, ya que Telegram requiere HTTPS (TLS/SSL) obligatoriamente.
 
+> **💡 Atajo rápido**: Puedes automatizar los pasos 4 y 5 de esta guía ejecutando `sudo ./tailscale_config.sh` desde la raíz del repositorio.
+
 ---
 
 ## ¿Por qué Tailscale?
