@@ -50,6 +50,11 @@ echo -e "${BLUE}[2/3] Configurando Tailscale Funnel en el puerto 5678...${NC}"
 # El comando --bg permite que se ejecute en el fondo (background) de manera persistente
 if sudo tailscale funnel --bg 5678; then
     echo -e "${GREEN}✅ Funnel iniciado con éxito.${NC}"
+    echo -e "${YELLOW}Provisionando certificado SSL de Let's Encrypt...${NC}"
+    TS_DOMAIN=$(tailscale funnel status | grep -o 'https://[^ ]*' | head -n 1 | sed 's|https://||')
+    if [ -n "$TS_DOMAIN" ]; then
+        sudo tailscale cert "$TS_DOMAIN" || true
+    fi
 else
     echo -e "${RED}❌ Error al iniciar el Funnel. ¿Tienes activado HTTPS y Funnel en tu panel de control de Tailscale (login.tailscale.com/admin)?${NC}"
     exit 1
@@ -67,7 +72,7 @@ echo ""
 echo -e "${YELLOW}▶️ COMPRUEBA TU URL OFICIAL EJECUTANDO:${NC}"
 echo -e "  ${BLUE}tailscale funnel status${NC}"
 echo ""
-TS_URL="https://$(tailscale status | head -n 1 | awk '{print $2}')"
+TS_URL=$(tailscale funnel status | grep -o 'https://[^ ]*' | head -n 1)
 ENV_FILE="services/n8n/.env"
 
 if [ -f "$ENV_FILE" ]; then

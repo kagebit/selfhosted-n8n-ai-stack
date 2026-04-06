@@ -3,7 +3,7 @@
 
 services:
   postgres-rag:
-    image: postgres:10
+    image: postgres:16
     container_name: Postgres_RAG
     restart: unless-stopped
     environment:

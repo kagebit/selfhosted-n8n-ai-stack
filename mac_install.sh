@@ -121,6 +121,7 @@ echo "Starting LocalAI embeddings service (Build may take several minutes)..."
 cd services/embeddings && $DOCKER_CMD up -d --build && cd ../..
 
 echo "Starting n8n orchestrator..."
+mkdir -p services/n8n/n8n-data
 cd services/n8n && $DOCKER_CMD up -d && cd ../..
 
 echo "Starting NocoDB visualization toolkit..."
