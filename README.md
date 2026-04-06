@@ -29,20 +29,9 @@ Self-hosted AI automation stack orchestrated via Docker and isolated internal ne
 
 The stack requires a Linux-based host environment. The automated installation script is compatible with Debian, Ubuntu, Fedora, CentOS, and Arch Linux.
 
-🔹 Minimum Requirements
-- CPU: 3 cores
-- RAM: 4 GB
-- Storage: 50 GB free (SSD recommended) (large due to Whisper models)
-- OS: Windows 10+, macOS 12+, Modern Linux
-- Python 3.9+
-
-*Note: With 4 GB, Whisper may run out of RAM even for the "small" model, but if you don't use Whisper, there is no problem.*
-
-🔹 Recommended for Smooth Usage
-- CPU: 6–8 cores
-- RAM: 16 GB or more
-- GPU: Compatible GPU (if model supports acceleration) for Whisper or local AI
-- Storage: NVMe SSD
+| 🔹 Minimum Requirements | 🔹 Recommended for Smooth Usage |
+| :--- | :--- |
+| CPU: 3 cores<br>RAM: 4 GB<br>Storage: 50 GB free (SSD recommended) (large due to Whisper models)<br>OS: Windows 10+, macOS 12+, Modern Linux<br>Python 3.9+<br><br>*Note: With 4 GB, Whisper may run out of RAM even for the "small" model, but if you don't use Whisper, there is no problem.* | CPU: 6–8 cores<br>RAM: 16 GB or more<br>GPU: Compatible GPU (if model supports acceleration) for Whisper or local AI<br>Storage: NVMe SSD |
 
 > 🪟 **Windows Users**: You can deploy this stack natively using the **Windows Subsystem for Linux (WSL)**. We highly recommend installing a **Debian** WSL distribution rather than Ubuntu, as Debian consumes considerably fewer background CPU and RAM resources, making it ideal for a persistent AI stack.
 > To install Debian on Windows WSL, run: `wsl --install -d Debian` (See [official Debian WSL guide](https://wiki.debian.org/InstallingDebianOn/Microsoft/Windows/SubsystemForLinux) for details).

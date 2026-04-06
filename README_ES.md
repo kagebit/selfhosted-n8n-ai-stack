@@ -29,20 +29,9 @@ Stack completo de automatización con IA, 100% self-hosted, configurado con Dock
 
 El stack requiere un sistema operativo anfitrión basado en Linux. El script de instalación automatizado ha sido probado y es compatible con Debian, Ubuntu, Fedora, CentOS y Arch Linux.
 
-🔹 Requisitos mínimos
-- CPU: 3 núcleos
-- RAM: 4 GB
-- Almacenamiento: 50 GB libres (SSD recomendado) y es tan alto por los modelos de Whisper
-- Sistema: Windows 10+, macOS 12+, Linux moderno
-- Python 3.9 o superior
-
-*Nota: Con 4 GB, Whisper se puede llegar a quedar corto de RAM incluso para el modelo "small", pero si no lo vas a usar, no hay ningún problema.*
-
-🔹 Recomendado para uso fluido
-- CPU de 6–8 núcleos
-- 16 GB de RAM o más
-- GPU compatible (si el modelo soporta aceleración) para Whisper o también IA en local
-- SSD NVMe
+| 🔹 Requisitos mínimos | 🔹 Recomendado para uso fluido |
+| :--- | :--- |
+| CPU: 3 núcleos<br>RAM: 4 GB<br>Almacenamiento: 50 GB libres (SSD recomendado) y es tan alto por los modelos de Whisper<br>Sistema: Windows 10+, macOS 12+, Linux moderno<br>Python 3.9 o superior<br><br>*Nota: Con 4 GB, Whisper se puede llegar a quedar corto de RAM incluso para el modelo "small", pero si no lo vas a usar, no hay ningún problema.* | CPU de 6–8 núcleos<br>16 GB de RAM o más<br>GPU compatible (si el modelo soporta aceleración) para Whisper o también IA en local<br>SSD NVMe |
 
 > 🪟 **Usuarios de Windows**: Puedes montar este stack de forma nativa utilizando el **Subsistema de Windows para Linux (WSL)**. Recomendamos firmemente instalar la distribución de **Debian** en lugar de Ubuntu, ya que consume muchísimos menos recursos en segundo plano, haciéndolo ideal para montar el stack de IA de forma estable.
 > Para instalar Debian desde Windows WSL, introduce en tu consola: `wsl --install -d Debian` (Consulta la [guía oficial de Debian en WSL](https://wiki.debian.org/InstallingDebianOn/Microsoft/Windows/SubsystemForLinux) para más detalles).
