@@ -35,7 +35,7 @@ The stack requires a Linux-based host environment. The automated installation sc
 | **RAM** | 4 GB | 16 GB or more |
 | **Storage** | 50 GB (SSD recommended) | SSD NVMe |
 | **GPU** | Not required | Compatible (Local AI/Whisper) |
-| **System** | Windows 10+, macOS 12+, Linux | Modern Linux |
+| **System** | Windows 10+, macOS 12+, Linux | Linux or MacOS |
 | **Aviso** | *With 4 GB, Whisper may be tight.* | *Ideal for smooth usage.* |
 
 > 🪟 **Windows Users**: You can deploy this stack natively using the **Windows Subsystem for Linux (WSL)**. We highly recommend installing a **Debian** WSL distribution rather than Ubuntu, as Debian consumes considerably fewer background CPU and RAM resources, making it ideal for a persistent AI stack.
