@@ -27,7 +27,7 @@ Stack completo de automatización con IA, 100% self-hosted, configurado con Dock
 <img src="src/images/n8n_agent_flow.gif" width="800" alt="Flujo de Agente en n8n">
 
 ### Transcripción de Audio con Whisper
-<img src="src/images/Whispwer_prova.gif" width="800" alt="Transcripción de Audio con Whisper">
+<img src="src/images/Whisper_prova.gif" width="800" alt="Transcripción de Audio con Whisper">
 
 ## Prerrequisitos
 
