@@ -24,10 +24,10 @@ Self-hosted AI automation stack orchestrated via Docker and isolated internal ne
 ## Agent Examples
 
 ### Main Agent Workflow
-![n8n Agent Workflow](src/images/n8n_agent_flow.gif)
+<img src="src/images/n8n_agent_flow.gif" width="800" alt="n8n Agent Workflow">
 
 ### Whisper Audio Transcription
-![Whisper Audio Transcription](src/images/Whispwer_prova.gif)
+<img src="src/images/Whispwer_prova.gif" width="800" alt="Whisper Audio Transcription">
 
 ## Prerequisites
 

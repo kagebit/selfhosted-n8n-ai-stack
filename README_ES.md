@@ -24,10 +24,10 @@ Stack completo de automatización con IA, 100% self-hosted, configurado con Dock
 ## Ejemplos de Uso
 
 ### Flujo de Agente Principal
-![Flujo de Agente en n8n](src/images/n8n_agent_flow.gif)
+<img src="src/images/n8n_agent_flow.gif" width="800" alt="Flujo de Agente en n8n">
 
 ### Transcripción de Audio con Whisper
-![Transcripción con Whisper](src/images/Whispwer_prova.gif)
+<img src="src/images/Whispwer_prova.gif" width="800" alt="Transcripción de Audio con Whisper">
 
 ## Prerrequisitos
 
