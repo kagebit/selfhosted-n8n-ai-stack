@@ -21,9 +21,13 @@ Stack completo de automatización con IA, 100% self-hosted, configurado con Dock
 - **Gestión Visual de Datos**: Interfaz consolidada estilo hoja de cálculo para tus bases de datos cortesía de NocoDB.
 - **Seguridad en Red**: Las redes internas de Docker creadas a medida aseguran que la comunicación de datos fundamentales permanezca aislada del exterior.
 
-## Ejemplo de Agente
+## Ejemplos de Uso
 
+### Flujo de Agente Principal
 ![Flujo de Agente en n8n](src/images/n8n_agent_flow.gif)
+
+### Transcripción de Audio con Whisper
+![Transcripción con Whisper](src/images/Whispwer_prova.gif)
 
 ## Prerrequisitos
 

@@ -21,9 +21,13 @@ Self-hosted AI automation stack orchestrated via Docker and isolated internal ne
 - **Visual Data Management**: Centralized database visibility via NocoDB.
 - **Secure Networking**: Isolated inner Docker networks ensure restricted communication among core components.
 
-## Agent Example
+## Agent Examples
 
+### Main Agent Workflow
 ![n8n Agent Workflow](src/images/n8n_agent_flow.gif)
+
+### Whisper Audio Transcription
+![Whisper Audio Transcription](src/images/Whispwer_prova.gif)
 
 ## Prerequisites
 
