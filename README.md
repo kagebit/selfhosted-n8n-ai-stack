@@ -23,9 +23,12 @@ Self-hosted AI automation stack orchestrated via Docker and isolated internal ne
 
 ## Screenshots
 
-> **[🖼️ Media Placeholder]** 
-> *Replace this block with a screenshot of your architecture, NocoDB dashboard, or a short GIF of an n8n workflow responding via Telegram.*
-> `![Stack Overview](src/images/screenshot.png)`
+### Infrastructure & Data Management
+![Portainer Dashboard](src/images/Portainer.png)
+![NocoDB Interface](src/images/Nocodb.png)
+
+### AI Agent Execution in n8n
+![n8n Agent Workflow](src/images/N8N_flujo.gif)
 
 ## Prerequisites
 
