@@ -12,7 +12,7 @@ Stack completo de automatización con IA, 100% self-hosted, configurado con Dock
 
 ---
 
-## Características (Features)
+## Características
 
 - **Workflows con IA Local**: Automatización completa en n8n acoplada con embeddings y LLMs totalmente locales, sin costes de APIs externas.
 - **RAG y Búsquedas Vectoriales**: PostgreSQL integrado con la extensión pgvector y Qdrant para búsquedas semánticas de alto rendimiento.
@@ -21,18 +21,33 @@ Stack completo de automatización con IA, 100% self-hosted, configurado con Dock
 - **Gestión Visual de Datos**: Interfaz consolidada estilo hoja de cálculo para tus bases de datos cortesía de NocoDB.
 - **Seguridad en Red**: Las redes internas de Docker creadas a medida aseguran que la comunicación de datos fundamentales permanezca aislada del exterior.
 
-## Capturas de Pantalla (Screenshots)
+## Ejemplo de Agente
 
 ![Flujo de Agente en n8n](src/images/n8n_agent_flow.gif)
 
-## Prerrequisitos (Prerequisites)
+## Prerrequisitos
 
 El stack requiere un sistema operativo anfitrión basado en Linux. El script de instalación automatizado ha sido probado y es compatible con Debian, Ubuntu, Fedora, CentOS y Arch Linux.
+
+🔹 Requisitos mínimos
+- CPU: 3 núcleos
+- RAM: 4 GB
+- Almacenamiento: 50 GB libres (SSD recomendado) y es tan alto por los modelos de Whisper
+- Sistema: Windows 10+, macOS 12+, Linux moderno
+- Python 3.9 o superior
+
+*Nota: Con 4 GB, Whisper se puede llegar a quedar corto de RAM incluso para el modelo "small", pero si no lo vas a usar, no hay ningún problema.*
+
+🔹 Recomendado para uso fluido
+- CPU de 6–8 núcleos
+- 16 GB de RAM o más
+- GPU compatible (si el modelo soporta aceleración) para Whisper o también IA en local
+- SSD NVMe
 
 > 🪟 **Usuarios de Windows**: Puedes montar este stack de forma nativa utilizando el **Subsistema de Windows para Linux (WSL)**. Recomendamos firmemente instalar la distribución de **Debian** en lugar de Ubuntu, ya que consume muchísimos menos recursos en segundo plano, haciéndolo ideal para montar el stack de IA de forma estable.
 > Para instalar Debian desde Windows WSL, introduce en tu consola: `wsl --install -d Debian` (Consulta la [guía oficial de Debian en WSL](https://wiki.debian.org/InstallingDebianOn/Microsoft/Windows/SubsystemForLinux) para más detalles).
 
-## Instalación (Installation)
+## Instalación
 
 ### 1. Configuración Automatizada
 
@@ -69,7 +84,7 @@ sudo ./tailscale_config.sh
 
 Este script verifica tu estado de autenticación en Tailscale, activa el servicio Funnel exponiendo el puerto 5678, y actualiza de inmediato tu `.env` con las URL mágicas de Webhook correctas. Tienes también instrucciones de configuración manual paso por paso en [docs/tailscale-setup.md](docs/tailscale-setup.md).
 
-## Uso (Usage)
+## Uso
 
 Una vez completada la instalación, toda la capa de orquestación arrancará sola de forma automática al iniciar sesión e incluso en futuros reinicios. Ya puedes entrar a los servicios y construir automatizaciones.
 
@@ -132,7 +147,7 @@ Para usarlo en un flujo cualquiera:
 2. Entra al menú lateral y haz clic en **Import from file...**
 3. Carga el archivo ubicado en `n8n-nodes/http-request-whisper.json`.
 
-## Agradecimientos (Acknowledgments)
+## Agradecimientos
 
 Se hace uso directo de las siguientes tecnologías de software libre de terceros:
 
