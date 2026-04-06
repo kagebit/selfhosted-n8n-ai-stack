@@ -81,7 +81,11 @@ if [ -f "$ENV_FILE" ]; then
     sed -i "s|^WEBHOOK_TUNNEL_URL=.*|WEBHOOK_TUNNEL_URL=$TS_URL|" "$ENV_FILE"
     echo -e "${GREEN}✅ .env actualizado con $TS_URL${NC}"
     echo -e "${YELLOW}Reiniciando n8n para aplicar cambios...${NC}"
-    (cd services/n8n && docker-compose restart) || echo -e "${RED}⚠️ No se pudo reiniciar n8n automáticamente.${NC}"
+    DOCKER_CMD="docker-compose"
+    if docker compose version &> /dev/null; then
+        DOCKER_CMD="docker compose"
+    fi
+    (cd services/n8n && $DOCKER_CMD restart) || echo -e "${RED}⚠️ No se pudo reiniciar n8n automáticamente.${NC}"
 else
     echo -e "${RED}⚠️ PASO FINAL OBLIGATORIO:${NC}"
     echo "No se encontró $ENV_FILE (¿has movido los archivos?)."

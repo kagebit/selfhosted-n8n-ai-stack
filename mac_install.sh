@@ -111,8 +111,19 @@ cd services/postgres-vector && $DOCKER_CMD up -d && cd ../..
 echo "Starting Qdrant vector store..."
 cd services/qdrant && $DOCKER_CMD up -d && cd ../..
 
-echo "Delaying execution to await PostgreSQL availability..."
-sleep 10
+echo "Waiting for PostgreSQL containers to be ready..."
+for CONTAINER in Postgres_RAG Postgres_Vector; do
+    RETRIES=0
+    until docker exec "$CONTAINER" pg_isready -q 2>/dev/null; do
+        RETRIES=$((RETRIES + 1))
+        if [ "$RETRIES" -ge 30 ]; then
+            echo "Warning: $CONTAINER did not become ready within 60 seconds. Proceeding anyway."
+            break
+        fi
+        sleep 2
+    done
+    echo "$CONTAINER is ready."
+done
 
 echo "Starting Whisper API transcription service (Build may take several minutes)..."
 cd services/whisper && $DOCKER_CMD up -d --build && cd ../..

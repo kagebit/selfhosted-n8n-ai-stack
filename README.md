@@ -99,39 +99,7 @@ Once installed, the entire orchestration layer starts automatically. You can acc
 
 ### Architecture Topology
 
-```text
-┌────────────────────────────────────────────────────────────────────────┐
-│                          TAILSCALE FUNNEL                              │
-│                    (HTTPS → localhost:5678)                            │
-│           Secure remote access and public webhook endpoint             │
-└──────────────────────────────┬─────────────────────────────────────────┘
-                               │
-┌──────────────────────────────▼─────────────────────────────────────────┐
-│                           NETWORK: n8n-net                             │
-│                                                                        │
-│  ┌──────────┐  ┌──────────────┐  ┌───────────────┐  ┌──────────────┐   │
-│  │   n8n    │  │ Postgres RAG │  │Postgres Vector│  │   Qdrant     │   │
-│  │  :5678   │  │    :5434     │  │    :5433      │  │   :6333      │   │
-│  └────┬─────┘  └──────────────┘  └───────────────┘  └──────────────┘   │
-│       │                                                                │
-│  ┌────▼─────┐  ┌──────────────┐                                        │
-│  │ Whisper  │  │   LocalAI    │                                        │
-│  │  :5001   │  │    :8081     │                                        │
-│  └──────────┘  │ (embeddings) │                                        │
-│                └──────────────┘                                        │
-└────────────────────────────────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────────────────────────────────┐
-│                            NETWORK: db                                 │
-│                                                                        │
-│  ┌──────────┐  ┌──────────────┐  ┌───────────────┐                     │
-│  │  NocoDB  │  │ Postgres RAG │  │Postgres Vector│                     │
-│  │  :9093   │  │   (shared)   │  │   (shared)    │                     │
-│  └──────────┘  └──────────────┘  └───────────────┘                     │
-│                                                                        │
-│  NocoDB auto-detects associated databases via shared network context.  │
-└────────────────────────────────────────────────────────────────────────┘
-```
+For a detailed diagram of the Docker network topology and inter-service connectivity, see → [docs/network-architecture_EN.md](docs/network-architecture_EN.md)
 
 ### Node Configuration
 

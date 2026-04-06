@@ -172,8 +172,19 @@ cd services/postgres-vector && $RUN_AS $DOCKER_CMD up -d && cd ../..
 echo "Starting Qdrant vector store..."
 cd services/qdrant && $RUN_AS $DOCKER_CMD up -d && cd ../..
 
-echo "Delaying execution to await PostgreSQL availability..."
-sleep 10
+echo "Waiting for PostgreSQL containers to be ready..."
+for CONTAINER in Postgres_RAG Postgres_Vector; do
+    RETRIES=0
+    until docker exec "$CONTAINER" pg_isready -q 2>/dev/null; do
+        RETRIES=$((RETRIES + 1))
+        if [ "$RETRIES" -ge 30 ]; then
+            echo "Warning: $CONTAINER did not become ready within 60 seconds. Proceeding anyway."
+            break
+        fi
+        sleep 2
+    done
+    echo "$CONTAINER is ready."
+done
 
 echo "Starting Whisper API transcription service (Build may take several minutes)..."
 cd services/whisper && $RUN_AS $DOCKER_CMD up -d --build && cd ../..
@@ -183,7 +194,6 @@ cd services/embeddings && $RUN_AS $DOCKER_CMD up -d --build && cd ../..
 
 echo "Starting n8n orchestrator..."
 mkdir -p services/n8n/n8n-data
-# Asegurar que n8n (UID 1000 interno) pueda escribir en el volumen local
 chown -R 1000:1000 services/n8n/n8n-data
 cd services/n8n && $RUN_AS $DOCKER_CMD up -d && cd ../..
 

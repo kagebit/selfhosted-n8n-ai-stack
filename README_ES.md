@@ -100,39 +100,7 @@ Estos endpoints no son accesibles desde fuera, pero puedes llamarlos desde n8n a
 
 ### Topología de la Arquitectura
 
-```text
-┌────────────────────────────────────────────────────────────────────────┐
-│                          TAILSCALE FUNNEL                              │
-│                    (HTTPS → localhost:5678)                            │
-│           Acceso remoto seguro y endpoint público de webhooks          │
-└──────────────────────────────┬─────────────────────────────────────────┘
-                               │
-┌──────────────────────────────▼─────────────────────────────────────────┐
-│                           RED: n8n-net                                 │
-│                                                                        │
-│  ┌──────────┐  ┌──────────────┐  ┌───────────────┐  ┌──────────────┐   │
-│  │   n8n    │  │ Postgres RAG │  │Postgres Vector│  │   Qdrant     │   │
-│  │  :5678   │  │    :5434     │  │    :5433      │  │   :6333      │   │
-│  └────┬─────┘  └──────────────┘  └───────────────┘  └──────────────┘   │
-│       │                                                                │
-│  ┌────▼─────┐  ┌──────────────┐                                        │
-│  │ Whisper  │  │   LocalAI    │                                        │
-│  │  :5001   │  │    :8081     │                                        │
-│  └──────────┘  │ (embeddings) │                                        │
-│                └──────────────┘                                        │
-└────────────────────────────────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────────────────────────────────┐
-│                            RED: db                                     │
-│                                                                        │
-│  ┌──────────┐  ┌──────────────┐  ┌───────────────┐                     │
-│  │  NocoDB  │  │ Postgres RAG │  │Postgres Vector│                     │
-│  │  :9093   │  │  (compartido)│  │ (compartido)  │                     │
-│  └──────────┘  └──────────────┘  └───────────────┘                     │
-│                                                                        │
-│  NocoDB autodetecta las bases de datos al compartir la misma red.      │
-└────────────────────────────────────────────────────────────────────────┘
-```
+Para un diagrama detallado de la topología de redes Docker y la conectividad entre servicios, consulta → [docs/network-architecture.md](docs/network-architecture.md)
 
 ### Nodos Importables (Configuración lista para usar)
 
